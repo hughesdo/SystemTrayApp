@@ -1,0 +1,82 @@
+========================================
+SystemTrayApp - Test URLs
+========================================
+
+Copy these URLs one at a time to test the application.
+Check the log file: SystemTrayApp_Debug.log
+
+YOUTUBE URLS (Should all work):
+========================================
+
+1. Standard YouTube URL:
+https://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+2. Short YouTube URL:
+https://youtu.be/dQw4w9WgXcQ
+
+3. YouTube without www:
+https://youtube.com/watch?v=dQw4w9WgXcQ
+
+4. Mobile YouTube:
+https://m.youtube.com/watch?v=dQw4w9WgXcQ
+
+5. YouTube with timestamp:
+https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=30s
+
+6. YouTube with playlist:
+https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=PLrAXtmErZgOeiKm4sgNOknGvNjby9efdf
+
+7. HTTP (not HTTPS) YouTube:
+http://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+
+TWITTER/X URLS (Should work):
+========================================
+
+8. Twitter/X status URL:
+https://x.com/i/status/1234567890123456789
+
+
+URLS THAT SHOULD NOT WORK:
+========================================
+
+9. Regular website:
+https://www.google.com
+
+10. Twitter profile (not video):
+https://x.com/username
+
+11. YouTube channel:
+https://www.youtube.com/c/channelname
+
+12. Plain text:
+This is just plain text, not a URL
+
+
+TESTING INSTRUCTIONS:
+========================================
+
+1. Start SystemTrayApp.exe
+2. Copy each URL above (one at a time)
+3. Wait 1-2 seconds
+4. Check if download starts (command window should appear)
+5. Check the log file for details:
+   - Location: Same folder as SystemTrayApp.exe
+   - Name: SystemTrayApp_Debug.log
+6. Check Documents folder for:
+   - Memes_YYYY-MM-DD folder
+   - Downloaded videos
+
+EXPECTED RESULTS:
+========================================
+
+URLs 1-8: Should trigger download
+URLs 9-12: Should NOT trigger download
+
+Log file should show:
+- "=== CLIPBOARD CHANGED ===" for each copy
+- "YouTube match result: True" for URLs 1-7
+- "Twitter match result: True" for URL 8
+- "✓ VIDEO URL DETECTED" for URLs 1-8
+- "✗ No video URL match" for URLs 9-12
+
