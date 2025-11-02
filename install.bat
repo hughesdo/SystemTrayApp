@@ -125,17 +125,62 @@ if !errorlevel! equ 0 (
 if !YTDLP_FOUND! equ 0 (
     echo    ℹ yt-dlp.exe not found
     echo.
-    echo    The application will offer to download it automatically on first run.
-    echo    Or you can download it manually from:
-    echo    https://github.com/yt-dlp/yt-dlp/releases
-    echo.
-    echo    Recommended location: !STARTUP_DIR!\yt-dlp.exe
-    echo                      or: C:\bin\yt-dlp.exe
+    choice /C YN /M "Would you like to download yt-dlp.exe now"
+    if !errorlevel! equ 1 (
+        echo.
+        echo    Downloading yt-dlp.exe...
+        echo    This may take a minute depending on your connection...
+        echo.
+
+        REM Download to TEMP first to avoid antivirus corruption
+        set "TEMP_YTDLP=%TEMP%\yt-dlp-installer.exe"
+        set "TARGET_YTDLP=!STARTUP_DIR!\yt-dlp.exe"
+
+        REM Delete temp file if exists
+        if exist "!TEMP_YTDLP!" del "!TEMP_YTDLP!"
+
+        REM Download using PowerShell
+        powershell -Command "$ProgressPreference = 'SilentlyContinue'; try { Invoke-WebRequest -Uri 'https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe' -OutFile '!TEMP_YTDLP!' -UseBasicParsing; exit 0 } catch { exit 1 }"
+
+        if !errorlevel! equ 0 (
+            REM Verify download
+            if exist "!TEMP_YTDLP!" (
+                REM Copy to application directory
+                copy "!TEMP_YTDLP!" "!TARGET_YTDLP!" >nul
+
+                if exist "!TARGET_YTDLP!" (
+                    echo    ✓ yt-dlp.exe downloaded successfully
+                    echo    ✓ Installed to: !TARGET_YTDLP!
+
+                    REM Clean up temp file
+                    del "!TEMP_YTDLP!" 2>nul
+                ) else (
+                    echo    ✗ Failed to copy yt-dlp.exe to application directory
+                    echo    ℹ The application will offer to download it on first run
+                )
+            ) else (
+                echo    ✗ Download failed - file not found
+                echo    ℹ The application will offer to download it on first run
+            )
+        ) else (
+            echo    ✗ Download failed
+            echo    ℹ The application will offer to download it on first run
+        )
+    ) else (
+        echo.
+        echo    ℹ Skipped download
+        echo    The application will offer to download it automatically on first run.
+        echo    Or you can download it manually from:
+        echo    https://github.com/yt-dlp/yt-dlp/releases
+        echo.
+        echo    Recommended location: !STARTUP_DIR!\yt-dlp.exe
+        echo                      or: C:\bin\yt-dlp.exe
+    )
 )
 echo.
 
 REM Create Memes folder in Documents
-echo [3/4] Setting up download folder...
+echo [4/4] Setting up download folder...
 set "MEMES_FOLDER=%USERPROFILE%\Documents\Memes"
 if not exist "%MEMES_FOLDER%" (
     mkdir "%MEMES_FOLDER%" 2>nul
@@ -149,7 +194,7 @@ if not exist "%MEMES_FOLDER%" (
 )
 echo.
 
-echo [4/4] Installation complete!
+echo [5/5] Installation complete!
 echo.
 echo ========================================
 echo Installation Complete!
