@@ -6,8 +6,8 @@
 
 ## 📥 Step 1: Download
 
-1. Go to the [Releases page](https://github.com/YOUR_USERNAME/SystemTrayApp/releases)
-2. Download **SystemTrayApp_v1.0.zip** (the latest version)
+1. Go to the [Releases page](https://github.com/hughesdo/SystemTrayApp/releases)
+2. Download **SystemTrayApp_v1.1.0.zip** (the latest version)
 3. Save it somewhere you can find it (like Downloads folder)
 
 **What you're downloading:**

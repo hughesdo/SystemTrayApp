@@ -6,7 +6,7 @@
 
 ## ⚡ **Quick Start (3 Steps)**
 
-1. **[Download the latest release](https://github.com/YOUR_USERNAME/SystemTrayApp/releases)** (SystemTrayApp_v1.0.zip)
+1. **[Download the latest release](https://github.com/hughesdo/SystemTrayApp/releases)** (SystemTrayApp_v1.1.0.zip)
 2. **Extract to:** `C:\Program Files\SystemTrayApp\` (or any permanent location - NOT Downloads or Desktop)
 3. **Run `install.bat`** (right-click → Run as Administrator)
 
@@ -46,7 +46,7 @@ This Windows app sits in your system tray and watches your clipboard. When you c
 
 ### Recommended: Automated Install
 
-1. **Download** [SystemTrayApp_v1.0.zip](https://github.com/YOUR_USERNAME/SystemTrayApp/releases)
+1. **Download** [SystemTrayApp_v1.1.0.zip](https://github.com/hughesdo/SystemTrayApp/releases)
 
 2. **Extract to a permanent location:**
    - ✅ Good: `C:\Program Files\SystemTrayApp\`
@@ -114,7 +114,7 @@ That's it. No buttons to click, no windows to open.
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/SystemTrayApp.git
+   git clone https://github.com/hughesdo/SystemTrayApp.git
    cd SystemTrayApp
    ```
 

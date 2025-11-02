@@ -1,6 +1,6 @@
 # Building SystemTrayApp from Source
 
-**Note:** Most users should download the pre-built release from the [Releases page](https://github.com/YOUR_USERNAME/SystemTrayApp/releases). Only build from source if you want to modify the code or contribute.
+**Note:** Most users should download the pre-built release from the [Releases page](https://github.com/hughesdo/SystemTrayApp/releases). Only build from source if you want to modify the code or contribute.
 
 ---
 
@@ -26,7 +26,7 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/SystemTrayApp.git
+   git clone https://github.com/hughesdo/SystemTrayApp.git
    cd SystemTrayApp
    ```
 
@@ -51,7 +51,7 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/SystemTrayApp.git
+   git clone https://github.com/hughesdo/SystemTrayApp.git
    cd SystemTrayApp
    ```
 
