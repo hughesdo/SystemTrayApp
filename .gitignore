@@ -67,7 +67,8 @@ bld/
 *.exe
 !install.bat
 !uninstall.bat
-yt-dlp.exe
+!bin/Release/yt-dlp.exe
+!bin/Release/SystemTrayApp.exe
 SystemTrayApp_Debug.log
 *.mp4
 *.webm
